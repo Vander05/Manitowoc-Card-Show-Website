@@ -1,0 +1,25 @@
+{
+  "event": {
+    "date_label": "Saturday, [Month] [Day], 2026",
+    "hours_label": "9:00 AM – 2:00 PM",
+    "admission_label": "$[Price] at the door · kids [age] free",
+    "parking_label": "Free parking for all attendees and vendors",
+    "food_label": "Snacks and drinks available for purchase on-site",
+    "loadin_label": "Vendor load-in and setup starts at 7:45 AM, ahead of the 9:00 AM open"
+  },
+  "vendors": {
+    "total_tables": 50,
+    "reserved_tables": 0,
+    "price_per_table": "$35",
+    "contacts": [
+      { "name": "Evander Kummer", "email": "kummerevander@gmail.com", "phone": "920-901-0797" },
+      { "name": "Seth Jones", "email": "", "phone": "920-901-7459" }
+    ]
+  },
+  "gallery": [
+    { "image": "", "caption": "Photo 1 — add a photo from a past show" },
+    { "image": "", "caption": "Photo 2 — add a photo from a past show" },
+    { "image": "", "caption": "Photo 3 — add a photo from a past show" },
+    { "image": "", "caption": "Photo 4 — add a photo from a past show" }
+  ]
+}

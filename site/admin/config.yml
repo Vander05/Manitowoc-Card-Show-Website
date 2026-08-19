@@ -1,0 +1,48 @@
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/manitowoc-card-show
+  branch: main
+
+media_folder: "images/gallery"
+public_folder: "/images/gallery"
+
+collections:
+  - name: "settings"
+    label: "Site settings"
+    files:
+      - file: "content/site.json"
+        label: "Event details, vendors & gallery"
+        name: "site"
+        fields:
+          - label: "Event"
+            name: "event"
+            widget: "object"
+            fields:
+              - { label: "Event date", name: "date_label", widget: "string" }
+              - { label: "Hours", name: "hours_label", widget: "string" }
+              - { label: "Admission", name: "admission_label", widget: "string" }
+              - { label: "Parking note", name: "parking_label", widget: "string" }
+              - { label: "Food & drink note", name: "food_label", widget: "string" }
+              - { label: "Vendor load-in note", name: "loadin_label", widget: "string" }
+          - label: "Vendors"
+            name: "vendors"
+            widget: "object"
+            fields:
+              - { label: "Price per table", name: "price_per_table", widget: "string" }
+              - { label: "Total tables", name: "total_tables", widget: "number", value_type: "int" }
+              - { label: "Tables reserved so far", name: "reserved_tables", widget: "number", value_type: "int" }
+              - label: "Contacts"
+                name: "contacts"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string", required: false }
+                  - { label: "Phone", name: "phone", widget: "string", required: false }
+          - label: "Gallery photos"
+            name: "gallery"
+            widget: "list"
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Caption (optional)", name: "caption", widget: "string", required: false }
