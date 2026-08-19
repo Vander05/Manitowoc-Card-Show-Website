@@ -26,20 +26,12 @@
   },
   "gallery": [
     {
-      "image": "",
-      "caption": "Photo 1 — add a photo from a past show"
+      "image": "/images/uploads/img_4864.jpeg",
+      "caption": "A View from out first show!"
     },
     {
       "image": "",
       "caption": "Photo 2 — add a photo from a past show"
-    },
-    {
-      "image": "",
-      "caption": "Photo 3 — add a photo from a past show"
-    },
-    {
-      "image": "",
-      "caption": "Photo 4 — add a photo from a past show"
     }
   ]
 }
