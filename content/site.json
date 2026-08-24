@@ -43,7 +43,9 @@
     {
       "date": "October 3rd",
       "time": "9am-2pm",
-      "location": "Holiday Inn Manitowoc - Ballroom"
+      "location": "Holiday Inn Manitowoc - Ballroom",
+      "tables_total": 50,
+      "tables_reserved": 50
     },
     {
       "date": "October 31st",
