@@ -73,4 +73,4 @@ collections:
             summary: "{{fields.caption}}"
             fields:
               - { label: "Photo", name: "image", widget: "image" }
-              - { label: "Caption (o
+              - { label: "Caption (optional)", name: "caption", widget: "string", required: false }
