@@ -228,6 +228,15 @@
   }
   .carousel-dots button.active{ background:var(--maroon); }
   .gallery-note{ max-width:560px; margin:20px auto 0; text-align:center; font-size:13.5px; color:rgba(23,34,43,0.6); }
+  #upcoming-shows{ scroll-margin-top:84px; }
+  .upcoming-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
+  .upcoming-card{ background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:22px; }
+  .upcoming-date{ font-family:'Anton',sans-serif; font-size:20px; color:var(--navy); }
+  .upcoming-time{ margin-top:6px; font-size:14px; font-weight:600; color:var(--maroon); }
+  .upcoming-location{ margin-top:10px; font-size:13.5px; line-height:1.5; color:rgba(23,34,43,0.72); }
+  .video-wrap{ max-width:760px; margin:24px auto 0; border-radius:18px; overflow:hidden; position:relative; aspect-ratio:16/9; background:var(--navy); display:none; }
+  .video-wrap iframe, .video-wrap video{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .video-caption{ max-width:760px; margin:10px auto 0; text-align:center; font-size:13px; color:rgba(23,34,43,0.6); }
 
   /* ---------- FAQ ---------- */
   .faq{ max-width:760px; }
@@ -255,25 +264,26 @@
 
 <header class="nav">
   <div class="nav-inner">
-   <div class="brand">
-  <div class="mark">MCS</div>
-  <svg class="brand-scene" viewBox="0 0 60 50" width="46" height="38" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
-    <path d="M0 46 Q15 42 30 46 T60 46 V50 H0 Z" fill="#1D6E8C" opacity="0.85"/>
-    <path d="M0 46 Q15 42 30 46 T60 46" stroke="#0F3A52" stroke-width="0.8" fill="none" opacity="0.4"/>
-    <polygon points="24,44 36,44 33,14 27,14" fill="#FFFFFF" stroke="#0F3A52" stroke-width="0.5"/>
-    <polygon points="27,20 33,20 32,28 28,28" fill="#B5352A"/>
-    <polygon points="26,34 34,34 33,40 27,40" fill="#B5352A"/>
-    <rect x="22" y="44" width="16" height="3" fill="#0F3A52"/>
-    <rect x="26" y="12" width="8" height="3" fill="#0F3A52"/>
-    <polygon points="27,12 33,12 33,7 27,7" fill="#FFE9A8" stroke="#0F3A52" stroke-width="0.6"/>
-    <polygon points="26,7 34,7 30,3" fill="#0F3A52"/>
-    <polygon points="30,9 55,2 55,9" fill="#FFE28A" opacity="0.5"/>
-    <path d="M40,9 q3,-3 6,0 q3,-3 6,0" stroke="#0F3A52" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-    <path d="M4,5 q2.5,-2.5 5,0 q2.5,-2.5 5,0" stroke="#0F3A52" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-  </svg>
-  <div class="brand-name">Manitowoc<span>Card Show</span></div>
-</div>
+    <div class="brand">
+      <div class="mark">MCS</div>
+      <svg class="brand-scene" viewBox="0 0 60 50" width="46" height="38" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
+        <path d="M0 46 Q15 42 30 46 T60 46 V50 H0 Z" fill="#1D6E8C" opacity="0.85"/>
+        <path d="M0 46 Q15 42 30 46 T60 46" stroke="#0F3A52" stroke-width="0.8" fill="none" opacity="0.4"/>
+        <polygon points="24,44 36,44 33,14 27,14" fill="#FFFFFF" stroke="#0F3A52" stroke-width="0.5"/>
+        <polygon points="27,20 33,20 32,28 28,28" fill="#B5352A"/>
+        <polygon points="26,34 34,34 33,40 27,40" fill="#B5352A"/>
+        <rect x="22" y="44" width="16" height="3" fill="#0F3A52"/>
+        <rect x="26" y="12" width="8" height="3" fill="#0F3A52"/>
+        <polygon points="27,12 33,12 33,7 27,7" fill="#FFE9A8" stroke="#0F3A52" stroke-width="0.6"/>
+        <polygon points="26,7 34,7 30,3" fill="#0F3A52"/>
+        <polygon points="30,9 55,2 55,9" fill="#FFE28A" opacity="0.5"/>
+        <path d="M40,9 q3,-3 6,0 q3,-3 6,0" stroke="#0F3A52" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M4,5 q2.5,-2.5 5,0 q2.5,-2.5 5,0" stroke="#0F3A52" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-name">Manitowoc<span>Card Show</span></div>
+    </div>
     <nav class="links">
+      <a href="#upcoming-shows">Upcoming</a>
       <a href="#details">Details</a>
       <a href="#whats-in-the-box">What's There</a>
       <a href="#vendors">Vendors</a>
@@ -316,10 +326,27 @@
       <polygon points="205,44 255,44 230,20" fill="#0F3A52"/>
       <polygon points="230,52 420,8 420,52" fill="#FFE28A" opacity="0.5"/>
       <polygon points="230,60 420,96 420,60" fill="#FFE28A" opacity="0.32"/>
-      <rect x="860" y="205" width="220" height="9" fill="#8A6A46"/>
-      <rect x="868" y="214" width="7" height="26" fill="#6B4F31"/>
-      <rect x="1020" y="214" width="7" height="26" fill="#6B4F31"/>
-      <rect x="944" y="214" width="7" height="26" fill="#6B4F31"/>
+      <ellipse cx="925" cy="228" rx="18" ry="4" fill="#0F3A52" opacity="0.18"/>
+      <g transform="translate(925,220) rotate(-18)">
+        <path d="M-16,0 Q-8,-9 0,-9 Q8,-9 16,0 Q8,9 0,9 Q-8,9 -16,0 Z" fill="#7A4B27" stroke="#5C3418" stroke-width="0.6"/>
+        <line x1="-8" y1="0" x2="8" y2="0" stroke="#F5EFDC" stroke-width="1.3"/>
+        <line x1="-3" y1="-2.5" x2="-3" y2="2.5" stroke="#F5EFDC" stroke-width="1"/>
+        <line x1="0" y1="-2.5" x2="0" y2="2.5" stroke="#F5EFDC" stroke-width="1"/>
+        <line x1="3" y1="-2.5" x2="3" y2="2.5" stroke="#F5EFDC" stroke-width="1"/>
+      </g>
+      <ellipse cx="985" cy="220" rx="16" ry="4" fill="#0F3A52" opacity="0.18"/>
+      <g transform="translate(985,210)">
+        <circle r="13" fill="#F5EFDC"/>
+        <path d="M-13,0 A13,13 0 0 1 13,0 Z" fill="#B5352A"/>
+        <rect x="-13" y="-1.5" width="26" height="3" fill="#0F3A52"/>
+        <circle r="4" fill="#F5EFDC" stroke="#0F3A52" stroke-width="1.5"/>
+      </g>
+      <ellipse cx="1040" cy="230" rx="12" ry="3.5" fill="#0F3A52" opacity="0.18"/>
+      <g transform="translate(1040,224)">
+        <circle r="9" fill="#F5EFDC" stroke="#0F3A52" stroke-width="0.6"/>
+        <path d="M-6,-6 Q0,-2 -6,6" stroke="#B5352A" stroke-width="1" fill="none"/>
+        <path d="M6,-6 Q0,-2 6,6" stroke="#B5352A" stroke-width="1" fill="none"/>
+      </g>
     </svg>
   </div>
 </div>
@@ -327,7 +354,6 @@
 <section class="hero">
   <div class="card-frame">
     <div class="card-inner">
-    
       <h1 class="title">Manitowoc<br><span class="accent">Card Show</span></h1>
       <p class="tagline">One ballroom, two card worlds. Bring a binder, leave with a trade. 50 dealer tables of sports cards alongside Pokémon and other TCG singles and sealed product.</p>
 
@@ -357,11 +383,27 @@
   </div>
 </section>
 
+<section id="upcoming-shows">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Save the date</span>
+      <h2>Upcoming Shows</h2>
+    </div>
+    <div class="upcoming-grid" id="upcoming-list">
+      <div class="upcoming-card">
+        <div class="upcoming-date">Saturday, October 3rd, 2026</div>
+        <div class="upcoming-time">9:00 AM – 2:00 PM</div>
+        <div class="upcoming-location">Holiday Inn Manitowoc — Ballroom<br>4601 Calumet Ave, Manitowoc, WI 54220</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="whats-in-the-box">
   <div class="wrap">
     <div class="section-head reveal">
-     <span class="kicker">Dealer lineup</span>
-<h2>What's on the tables</h2>
+      <span class="kicker">Dealer lineup</span>
+      <h2>What's on the tables</h2>
       <p>Every table is different — that's the point. Here's what to expect walking the ballroom floor.</p>
     </div>
     <div class="box-grid">
@@ -472,6 +514,8 @@
       </div>
       <div class="carousel-dots" id="carousel-dots"></div>
     </div>
+    <div class="video-wrap reveal" id="video-wrap"></div>
+    <p class="video-caption" id="video-caption"></p>
     <p class="gallery-note">These slides are placeholders — send over your photos from the last two shows and they'll be dropped straight in, rotating automatically like this.</p>
   </div>
 </section>
@@ -649,6 +693,38 @@
     track.addEventListener('mouseleave', function(){ if(!reduceMotion) resetTimer(); });
   }
 
+  function renderVideo(video){
+    var wrap = document.getElementById('video-wrap');
+    var caption = document.getElementById('video-caption');
+    if(!video || !video.url){ wrap.style.display = 'none'; caption.textContent = ''; return; }
+    var url = video.url;
+    var yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/);
+    var vm = url.match(/vimeo\.com\/(\d+)/);
+    if(yt){
+      wrap.innerHTML = '<iframe src="https://www.youtube.com/embed/' + yt[1] + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    } else if(vm){
+      wrap.innerHTML = '<iframe src="https://player.vimeo.com/video/' + vm[1] + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+    } else {
+      wrap.innerHTML = '<video controls src="' + url + '"></video>';
+    }
+    wrap.style.display = 'block';
+    caption.textContent = video.caption || '';
+  }
+
+  function renderUpcoming(list){
+    var wrap = document.getElementById('upcoming-list');
+    if(!list || !list.length) return;
+    wrap.innerHTML = '';
+    list.forEach(function(show){
+      var card = document.createElement('div');
+      card.className = 'upcoming-card';
+      card.innerHTML = '<div class="upcoming-date">' + (show.date || '') + '</div>' +
+        '<div class="upcoming-time">' + (show.time || '') + '</div>' +
+        '<div class="upcoming-location">' + (show.location || '') + '</div>';
+      wrap.appendChild(card);
+    });
+  }
+
   function renderAll(data){
     setText('stat-date', data.event.date_label);
     setText('stat-hours', data.event.hours_label);
@@ -662,6 +738,8 @@
     renderContacts(data.vendors.contacts);
     renderAvailability(data.vendors);
     renderGallery(data.gallery);
+    renderUpcoming(data.upcomingShows);
+    renderVideo(data.video);
   }
 
   fetch('content/site.json', { cache: 'no-store' })
