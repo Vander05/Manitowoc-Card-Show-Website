@@ -38,5 +38,12 @@
       "image": "/images/uploads/img_2488.jpeg",
       "caption": "A view of our vendors and attendees! "
     }
+  ],
+  "upcomingShows": [
+    {
+      "date": "October 3rd",
+      "time": "9am-2pm",
+      "location": "Holiday Inn Manitowoc - Ballroom"
+    }
   ]
 }
