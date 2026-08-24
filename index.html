@@ -234,6 +234,14 @@
   .upcoming-date{ font-family:'Anton',sans-serif; font-size:20px; color:var(--navy); }
   .upcoming-time{ margin-top:6px; font-size:14px; font-weight:600; color:var(--maroon); }
   .upcoming-location{ margin-top:10px; font-size:13.5px; line-height:1.5; color:rgba(23,34,43,0.72); }
+  .upcoming-avail{ margin-top:14px; display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:100px; font-size:12.5px; font-weight:700; }
+  .upcoming-avail .dot{ width:7px; height:7px; border-radius:50%; }
+  .upcoming-avail.open{ background:rgba(151,196,75,0.18); color:#4E7A28; }
+  .upcoming-avail.open .dot{ background:#6E9C3C; }
+  .upcoming-avail.low{ background:rgba(224,167,46,0.18); color:#8A6414; }
+  .upcoming-avail.low .dot{ background:var(--gold); }
+  .upcoming-avail.sold{ background:rgba(181,53,42,0.15); color:var(--maroon); }
+  .upcoming-avail.sold .dot{ background:var(--maroon); }
   .video-wrap{ max-width:760px; margin:24px auto 0; border-radius:18px; overflow:hidden; position:relative; aspect-ratio:16/9; background:var(--navy); display:none; }
   .video-wrap iframe, .video-wrap video{ position:absolute; inset:0; width:100%; height:100%; border:0; }
   .video-caption{ max-width:760px; margin:10px auto 0; text-align:center; font-size:13px; color:rgba(23,34,43,0.6); }
@@ -394,6 +402,7 @@
         <div class="upcoming-date">Saturday, October 3rd, 2026</div>
         <div class="upcoming-time">9:00 AM – 2:00 PM</div>
         <div class="upcoming-location">Holiday Inn Manitowoc — Ballroom<br>4601 Calumet Ave, Manitowoc, WI 54220</div>
+        <div class="upcoming-avail open"><span class="dot"></span><span>50 of 50 vendor tables available</span></div>
       </div>
     </div>
   </div>
@@ -472,8 +481,6 @@
           <h2 style="color:var(--cream); font-size:32px; margin-top:10px;">Reserve a table</h2>
           <ul class="checklist">
             <li>50 total tables in the Holiday Inn Manitowoc ballroom — sports card and TCG dealers both welcome</li>
-            <li>8ft table and chair per spot, access from load-in through teardown</li>
-            <li>Table count is limited — first come, first held with payment</li>
             <li id="vendor-loadin">Vendor load-in and setup starts at 7:45 AM, ahead of the 9:00 AM open</li>
           </ul>
         </div>
@@ -718,9 +725,22 @@
     list.forEach(function(show){
       var card = document.createElement('div');
       card.className = 'upcoming-card';
+      var availHTML = '';
+      var total = show.tables_total;
+      var reserved = show.tables_reserved;
+      if(total !== undefined && total !== null && total !== ''){
+        total = parseInt(total, 10);
+        reserved = parseInt(reserved, 10) || 0;
+        var remaining = total - reserved;
+        var cls = 'open', label = remaining + ' of ' + total + ' vendor tables available';
+        if(remaining <= 0){ cls = 'sold'; label = 'Sold out — all ' + total + ' vendor tables reserved'; }
+        else if(remaining <= 8){ cls = 'low'; label = 'Only ' + remaining + ' of ' + total + ' vendor tables left'; }
+        availHTML = '<div class="upcoming-avail ' + cls + '"><span class="dot"></span><span>' + label + '</span></div>';
+      }
       card.innerHTML = '<div class="upcoming-date">' + (show.date || '') + '</div>' +
         '<div class="upcoming-time">' + (show.time || '') + '</div>' +
-        '<div class="upcoming-location">' + (show.location || '') + '</div>';
+        '<div class="upcoming-location">' + (show.location || '') + '</div>' +
+        availHTML;
       wrap.appendChild(card);
     });
   }
