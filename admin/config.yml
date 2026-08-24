@@ -23,44 +23,54 @@ auth:
 
 site_url: https://manitowoccardshow.netlify.app
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "images/gallery"
+public_folder: "/images/gallery"
 
 collections:
-  - name: "site"
-    label: "Show details"
+  - name: "settings"
+    label: "Site settings"
     files:
-      - name: "settings"
-        label: "Site content"
-        file: "content/site.json"
+      - file: "content/site.json"
+        label: "Event details, vendors & gallery"
+        name: "site"
         fields:
           - label: "Event"
             name: "event"
             widget: "object"
             fields:
-              - { label: "Date", name: "date_label", widget: "string" }
+              - { label: "Event date", name: "date_label", widget: "string" }
               - { label: "Hours", name: "hours_label", widget: "string" }
               - { label: "Admission", name: "admission_label", widget: "string" }
-              - { label: "Parking", name: "parking_label", widget: "string" }
-              - { label: "Food and drink", name: "food_label", widget: "string" }
+              - { label: "Parking note", name: "parking_label", widget: "string" }
+              - { label: "Food & drink note", name: "food_label", widget: "string" }
               - { label: "Vendor load-in note", name: "loadin_label", widget: "string" }
           - label: "Vendors"
             name: "vendors"
             widget: "object"
             fields:
+              - { label: "Price per table", name: "price_per_table", widget: "string" }
               - { label: "Total tables", name: "total_tables", widget: "number", value_type: "int" }
               - { label: "Tables reserved so far", name: "reserved_tables", widget: "number", value_type: "int" }
-              - { label: "Price per table", name: "price_per_table", widget: "string" }
               - label: "Contacts"
                 name: "contacts"
                 widget: "list"
+                summary: "{{fields.name}}"
                 fields:
                   - { label: "Name", name: "name", widget: "string" }
                   - { label: "Email", name: "email", widget: "string", required: false }
                   - { label: "Phone", name: "phone", widget: "string", required: false }
+          - label: "Upcoming shows"
+            name: "upcomingShows"
+            widget: "list"
+            summary: "{{fields.date}}"
+            fields:
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Time", name: "time", widget: "string" }
+              - { label: "Location", name: "location", widget: "text" }
           - label: "Gallery photos"
             name: "gallery"
             widget: "list"
+            summary: "{{fields.caption}}"
             fields:
-              - { label: "Photo", name: "image", widget: "image", required: false }
-              - { label: "Caption", name: "caption", widget: "string", required: false }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Caption (o
