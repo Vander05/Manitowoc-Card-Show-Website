@@ -67,6 +67,8 @@ collections:
               - { label: "Date", name: "date", widget: "string" }
               - { label: "Time", name: "time", widget: "string" }
               - { label: "Location", name: "location", widget: "text" }
+              - { label: "Total tables for this show", name: "tables_total", widget: "number", value_type: "int", required: false }
+              - { label: "Tables reserved so far", name: "tables_reserved", widget: "number", value_type: "int", required: false }
           - label: "Gallery photos"
             name: "gallery"
             widget: "list"
@@ -74,3 +76,4 @@ collections:
             fields:
               - { label: "Photo", name: "image", widget: "image" }
               - { label: "Caption (optional)", name: "caption", widget: "string", required: false }
+
