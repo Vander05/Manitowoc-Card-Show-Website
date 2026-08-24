@@ -53,6 +53,13 @@
       "location": "Holiday Inn Manitowoc — Ballroom",
       "tables_total": 50,
       "tables_reserved": 0
+    },
+    {
+      "date": "December 5th",
+      "time": "9am-2pm",
+      "tables_total": 50,
+      "tables_reserved": 0,
+      "location": "Holiday Inn Manitowoc — Ballroom"
     }
   ]
 }
