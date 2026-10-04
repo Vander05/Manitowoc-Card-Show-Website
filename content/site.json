@@ -1,6 +1,6 @@
 {
   "event": {
-    "date_label": "Saturday, October 3rd, 2026",
+    "date_label": "Saturday, October 31st, 2026",
     "hours_label": "9:00 AM – 2:00 PM",
     "admission_label": "Free",
     "parking_label": "Free parking for all attendees and vendors",
@@ -8,8 +8,8 @@
     "loadin_label": "Vendor load-in and setup starts at 7:45 AM, ahead of the 9:00 AM open"
   },
   "vendors": {
-    "total_tables": 50,
-    "reserved_tables": 45,
+    "total_tables": 45,
+    "reserved_tables": 13,
     "price_per_table": "$35",
     "contacts": [
       {
@@ -41,23 +41,16 @@
   ],
   "upcomingShows": [
     {
-      "date": "October 3rd",
-      "time": "9am-2pm",
-      "location": "Holiday Inn Manitowoc - Ballroom",
-      "tables_total": 50,
-      "tables_reserved": 45
-    },
-    {
       "date": "October 31st",
       "time": "9am-2pm",
       "location": "Holiday Inn Manitowoc — Ballroom",
-      "tables_total": 50,
-      "tables_reserved": 4
+      "tables_total": 45,
+      "tables_reserved": 13
     },
     {
       "date": "December 5th",
       "time": "9am-2pm",
-      "tables_total": 50,
+      "tables_total": 45,
       "tables_reserved": 1,
       "location": "Holiday Inn Manitowoc — Ballroom"
     }
