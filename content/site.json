@@ -9,7 +9,7 @@
   },
   "vendors": {
     "total_tables": 50,
-    "reserved_tables": 25,
+    "reserved_tables": 26,
     "price_per_table": "$35",
     "contacts": [
       {
@@ -49,7 +49,7 @@
       "time": "9am-2pm",
       "location": "Holiday Inn Manitowoc — Ballroom",
       "tables_total": 50,
-      "tables_reserved": 25
+      "tables_reserved": 26
     },
     {
       "date": "December 5th",
