@@ -8,7 +8,7 @@
     "loadin_label": "Vendor load-in and setup starts at 7:45 AM, ahead of the 9:00 AM open"
   },
   "vendors": {
-    "total_tables": 50,
+    "total_tables": 48,
     "reserved_tables": 45,
     "price_per_table": "$35",
     "contacts": [
@@ -48,7 +48,7 @@
       "date": "October 31st",
       "time": "9am-2pm",
       "location": "Holiday Inn Manitowoc — Ballroom",
-      "tables_total": 50,
+      "tables_total": 48,
       "tables_reserved": 45
     },
     {
