@@ -9,7 +9,7 @@
   },
   "vendors": {
     "total_tables": 50,
-    "reserved_tables": 24,
+    "reserved_tables": 29,
     "price_per_table": "$35",
     "contacts": [
       {
@@ -29,6 +29,15 @@
       }
     ]
   },
+  "upcomingShows": [
+    {
+      "date": "December 5th",
+      "time": "9am-2pm",
+      "tables_total": 50,
+      "tables_reserved": 29,
+      "location": "Holiday Inn Manitowoc — Ballroom"
+    }
+  ],
   "gallery": [
     {
       "image": "/images/uploads/img_4864.jpeg",
@@ -50,15 +59,6 @@
     },
     {
       "image": "/images/gallery/img_8188.jpeg"
-    }
-  ],
-  "upcomingShows": [
-    {
-      "date": "December 5th",
-      "time": "9am-2pm",
-      "tables_total": 50,
-      "tables_reserved": 24,
-      "location": "Holiday Inn Manitowoc — Ballroom"
     }
   ]
 }
